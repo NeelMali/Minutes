@@ -103,23 +103,23 @@ window.QS_DATA = (() => {
   },
   {
     id: 11,
-    name: 'Crazy Mens Wear',
+    name: 'Luz Johnsons',
     category: 'Clothing',
     rating: 4.7,
     distance_km: 0.6,
-    tags: ['men', 'casual', 'blazers'],
+    tags: ['unisex', 'casual', 'blazers'],
     description: 'Stylish men’s wear boutique near Noble Chemist in Vasant Sagar.',
-    image: 'https://images.unsplash.com/photo-placeholder-kandivali-shop.jpg'
+    image: 'https://www.vietnamimmigration.com/wp-content/uploads/2012/12/clothing-shop-in-da-nang.jpg'
   },
   {
     id: 12,
-    name: 'M S Computers',
-    category: 'Computer Repair',
+    name: 'Tarang',
+    category: 'Female Clothing',
     rating: 4.2,
     distance_km: 1.7,
-    tags: ['PC', 'repair', 'hardware'],
+    tags: ['female', 'casual', 'blazers'],
     description: 'Computer repair and servicing near Gokul Garden, Thakur Complex.',
-    image: 'https://images.unsplash.com/photo-placeholder-kandivali-shop.jpg'
+    image: 'https://5bestincity.com/profileimages/india/tarang-clothing-stores-borivali-mumbai-maharashtra/25036-cf295-1.jpg'
   },
   {
     id: 13,
