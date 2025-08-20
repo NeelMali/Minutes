@@ -1,95 +1,162 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Minutes - Everything in 20-30 Minutes</title>
-  <link rel="stylesheet" href="main.css">
-</head>
-<body>
-  <!-- Header -->
-  <header class="navbar">
-    <div class="logo">Minutes</div>
-    <div class="location">📍 Mumbai | 20-30 mins</div>
-    <input type="text" placeholder="Search for products or stores..." class="search-bar">
-    <nav>
-      <a href="#">Login</a>
-      <a href="#">Sign Up</a>
-      <a href="#" class="cart">🛒 My Cart</a>
-    </nav>
-  </header>
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Groceries, Food & More</h1>
-    <p>Delivered to your doorstep within 20-30 minutes!</p>
-    <button class="cta-btn">Shop Now</button>
-  </section>
+/* Header */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #ff5a5f;
+  color: white;
+}
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+.location {
+  font-size: 14px;
+}
+.search-bar {
+  flex: 1;
+  margin: 0 15px;
+  padding: 8px;
+  border-radius: 20px;
+  border: none;
+}
+nav a {
+  margin-left: 15px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+.cart {
+  background: white;
+  color: #ff5a5f;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
 
-  <!-- Categories Section -->
-  <section class="categories">
-    <h2>Shop by Categories</h2>
-    <div class="category-list">
-      <div class="category">🍎 Fruits & Vegetables</div>
-      <div class="category">🥛 Dairy & Beverages</div>
-      <div class="category">🍔 Restaurants</div>
-      <div class="category">🍪 Snacks</div>
-      <div class="category">🛍 Local Stores</div>
-    </div>
-  </section>
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 50px 20px;
+  background: #ffeaea;
+}
+.hero h1 {
+  font-size: 36px;
+}
+.hero p {
+  margin: 15px 0;
+  font-size: 18px;
+}
+.cta-btn {
+  padding: 12px 25px;
+  background: #ff5a5f;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+}
 
-  <!-- Featured Stores -->
-  <section class="stores">
-    <h2>Featured Stores Near You</h2>
-    <div class="store-list">
-      <div class="store">🏪 Fresh Mart</div>
-      <div class="store">🥗 Green Grocery</div>
-      <div class="store">🍕 Pizza Hub</div>
-      <div class="store">☕ Coffee Corner</div>
-    </div>
-  </section>
+/* Categories */
+.categories {
+  padding: 40px 20px;
+}
+.categories h2 {
+  margin-bottom: 20px;
+}
+.category-list {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.category {
+  background: #f3f3f3;
+  padding: 15px;
+  border-radius: 10px;
+  flex: 1;
+  text-align: center;
+  min-width: 150px;
+  font-weight: bold;
+}
 
-  <!-- Popular Products -->
-  <section class="products">
-    <h2>Popular Picks</h2>
-    <div class="product-list">
-      <div class="product">
-        <img src="https://via.placeholder.com/120" alt="Apple">
-        <p>Fresh Apples - ₹120/kg</p>
-      </div>
-      <div class="product">
-        <img src="https://via.placeholder.com/120" alt="Milk">
-        <p>Amul Milk - ₹50/ltr</p>
-      </div>
-      <div class="product">
-        <img src="https://via.placeholder.com/120" alt="Burger">
-        <p>Veg Burger - ₹99</p>
-      </div>
-      <div class="product">
-        <img src="https://via.placeholder.com/120" alt="Coffee">
-        <p>Cappuccino - ₹149</p>
-      </div>
-    </div>
-  </section>
+/* Stores */
+.stores {
+  padding: 40px 20px;
+  background: #fafafa;
+}
+.store-list {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.store {
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  flex: 1;
+  text-align: center;
+  min-width: 150px;
+}
 
-  <!-- Testimonials -->
-  <section class="testimonials">
-    <h2>What Our Customers Say</h2>
-    <div class="testimonial-list">
-      <div class="testimonial">"Super fast delivery, loved the service!" – Riya</div>
-      <div class="testimonial">"Minutes saved me during late night cravings!" – Aarav</div>
-      <div class="testimonial">"Affordable and convenient, highly recommend!" – Sneha</div>
-    </div>
-  </section>
+/* Products */
+.products {
+  padding: 40px 20px;
+}
+.product-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.product {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  flex: 1;
+  min-width: 150px;
+}
+.product img {
+  max-width: 100px;
+  margin-bottom: 10px;
+}
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>&copy; 2025 Minutes | Fast, Local & Reliable</p>
-    <p>
-      <a href="#">About</a> | 
-      <a href="#">Contact</a> | 
-      <a href="#">Privacy Policy</a>
-    </p>
-  </footer>
-</body>
-</html>
+/* Testimonials */
+.testimonials {
+  padding: 40px 20px;
+  background: #f9f9f9;
+}
+.testimonial-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.testimonial {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  flex: 1;
+  min-width: 200px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #ff5a5f;
+  color: white;
+}
+.footer a {
+  color: white;
+  text-decoration: none;
+}
