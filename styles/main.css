@@ -30,7 +30,7 @@ html, body { margin: 0; padding: 0; font-family: system-ui, -apple-system, Segoe
 
 .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
 .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; text-decoration: none; color: inherit; display: block; }
-.card:hover { box-shadow: 8px 8px 24px rgba(0,0,0,.08); transform: translateY(-1px); }
+.card:hover { box-shadow: 0 8px 24px rgba(0,0,0,.08); transform: translateY(-1px); }
 .card-img { background: #ddd; height: 130px; background-size: cover; background-position: center; }
 .card-body { padding: 12px; }
 .card-title { font-weight: 700; }
@@ -58,7 +58,7 @@ html, body { margin: 0; padding: 0; font-family: system-ui, -apple-system, Segoe
 
 .pricing { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 20px 0 32px; }
 .price-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
-.price-card.featured { border-color: var(--brand); box-shadow: 8px 8px 24px rgba(255,77,77,.2); }
+.price-card.featured { border-color: var(--brand); box-shadow: 0 8px 24px rgba(255,77,77,.2); }
 .price { font-size: 28px; font-weight: 800; }
 .price span { font-size: 14px; color: var(--muted); }
 
@@ -75,110 +75,10 @@ html, body { margin: 0; padding: 0; font-family: system-ui, -apple-system, Segoe
   .hero-search input { width: 100%; max-width: 360px; }
 }
 
-/* New Product Listing Styles */
-.products-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-.products-header h2 {
-  margin: 0;
-}
-.products-header a {
-  font-weight: 600;
-  color: var(--brand);
-  text-decoration: none;
-}
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
-}
-.product-card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 15px;
-  text-align: center;
-  box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
-  transition: 0.3s ease;
-  position: relative;
-}
-.product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 6px 15px rgba(0,0,0,0.15);
-}
-.product-card-top {
-  position: relative;
-  height: 160px;
-  margin-bottom: 12px;
-}
-.product-card-top img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-.product-card h3 {
-  font-size: 16px;
-  margin-bottom: 6px;
-  color: #222;
-}
-.product-card p {
-  font-size: 14px;
-  font-weight: bold;
-  color: #4cafef;
-}
-.price-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 10px;
-}
-.price-row .price {
-  font-size: 16px;
-  font-weight: bold;
-  color: #222;
-  margin: 0;
-}
-.price-row .old-price {
-  font-size: 12px;
-  color: var(--muted);
-  text-decoration: line-through;
-  margin-right: 5px;
-}
-.price-row .add-btn {
-  background-color: var(--brand);
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  padding: 8px 12px;
-  cursor: pointer;
-  font-weight: 700;
-}
-.delivery-time {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: white;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: 600;
-}
-.discount-badge {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: var(--brand);
-  color: #fff;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: 600;
-}
+/* ============================
+   Categories Section 
+   ============================ */
 
-/* Our Services Section */
 .services-container {
   display: flex;
   flex-wrap: wrap;
@@ -207,7 +107,6 @@ html, body { margin: 0; padding: 0; font-family: system-ui, -apple-system, Segoe
   margin-bottom: 10px;
 }
 
-/* Shop by Categories */
 .categories h2 {
   margin: 32px 0 20px;
   font-size: 24px;
@@ -257,4 +156,124 @@ html, body { margin: 0; padding: 0; font-family: system-ui, -apple-system, Segoe
 .category-card:hover {
   box-shadow: 0 6px 18px rgba(0,0,0,.08);
   transform: translateY(-2px);
+}
+
+/* ============================
+   Popular Products Section
+   ============================ */
+.popular h2 {
+  margin: 32px 0 16px;
+  font-size: 24px;
+  font-weight: 700;
+}
+.scroll-row {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scrollbar-width: thin;
+}
+.scroll-row::-webkit-scrollbar {
+  height: 6px;
+}
+.scroll-row::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 10px;
+}
+.product-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  min-width: 140px;
+  flex-shrink: 0;
+  padding: 12px;
+  text-align: center;
+}
+.product-card img {
+  width: 16px;
+  height: 20px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+.product-card p {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+}
+.product-card span {
+  font-size: 14px;
+  color: var(--brand);
+  font-weight: 700;
+}
+/* catorgiresss */
+
+/* Product Sections */
+.products {
+  padding: 40px 20px;
+}
+
+.products h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+/* Grid Layout */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+/* Product Card */
+.product-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+}
+
+.product-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.product-card h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+  color: #222;
+}
+
+.product-card p {
+  font-size: 14px;
+  font-weight: bold;
+  color: #4cafef;
+}
+
+/* Hover Effect */
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 15px rgba(0,0,0,0.15);
+}
+
+/* Map Section */
+.map-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#map-container {
+  height: 400px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background-color: #e9e5d8;
+  background-image: url('https://i.imgur.com/g8vL3hR.jpg'); /* A generic map-like image or placeholder */
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 24px;
 }
