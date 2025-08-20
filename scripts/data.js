@@ -83,13 +83,13 @@ window.QS_DATA = (() => {
   },
   {
     id: 9,
-    name: ' Cafe K2K',
+    name: 'Theobroma Bakery',
     category: 'Bakery',
     rating: 4.3,
     distance_km: 0.9,
     tags: ['cafe', 'bakery', 'quick bites'],
     description: 'Cozy vegetarian-friendly café open 24 hours in Centrium.',
-    image: 'https://tse1.mm.bing.net/th/id/OIP.i25MxooR3pi4FwhQhk0OwwHaIQ?pid=Api&P=0&h=180'
+    image: 'https://img.restaurantguru.com/c2ba-Restaurant-Theobroma-interior-2.jpg'
   },
   {
     id: 10,
