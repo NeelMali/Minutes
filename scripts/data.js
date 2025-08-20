@@ -33,13 +33,13 @@ window.QS_DATA = (() => {
   },
   {
     id: 4,
-    name: 'Jagannath Plumbing Work',
+    name: 'Mahalakshmi Plumbing Work',
     category: 'Plumber',
     rating: 4.4,
     distance_km: 0.9,
     tags: ['leak', 'bath fitting'],
     description: 'Efficient plumbing repairs and fittings in Kandivali East.',
-    image: 'https://images.unsplash.com/photo-placeholder-kandivali-shop.jpg'
+    image: 'https://www.bizkl.com/galleryimgs/t_shop5377.jpg'
   },
   {
     id: 5,
@@ -53,43 +53,43 @@ window.QS_DATA = (() => {
   },
   {
     id: 6,
-    name: 'Mobile Mazza',
-    category: 'Electronics Repair',
+    name: 'Style Mobile',
+    category: 'Electronics accessories',
     rating: 4.2,
     distance_km: 1.8,
     tags: ['mobile', 'screen', 'software'],
-    description: 'Specialized mobile repair services across Kandivali East.',
-    image: 'https://images.unsplash.com/photo-placeholder-kandivali-shop.jpg'
+    description: 'Specialized mobile accessories services across Kandivali East.',
+    image: 'https://xindadisplay.com/wp-content/uploads/2019/09/custom-design-mobile-cell-phone-shop-fitting-1.jpg'
   },
   {
     id: 7,
-    name: 'Soham Technologies',
+    name: 'Mobile reapir centre',
     category: 'Electronics Repair',
     rating: 4.0,
     distance_km: 2.3,
     tags: ['electronics', 'equipment', 'repair'],
     description: 'Trusted for repairing various electronic equipment in Thakur Village.',
-    image: 'https://images.unsplash.com/photo-placeholder-kandivali-shop.jpg'
+    image: 'https://www.gloucesterbid.uk/wp-content/uploads/DSCF1002-Copy-1024x768.jpg'
   },
   {
     id: 8,
-    name: 'Fondant N Frost',
+    name: 'Merwans Cake stop',
     category: 'Bakery',
     rating: 4.9,
     distance_km: 0.7,
     tags: ['cakes', 'desserts'],
     description: 'Top-rated bakery on Akurli Road, perfect for sweets and pastries.',
-    image: 'https://images.unsplash.com/photo-placeholder-kandivali-shop.jpg'
+    image: 'https://media-cdn.tripadvisor.com/media/photo-s/0e/68/37/a0/outlet-from-outside.jpghttps://images.unsplash.com/photo-placeholder-kandivali-shop.jpg'
   },
   {
     id: 9,
-    name: 'Haven’s Cafe',
+    name: ' Cafe K2K',
     category: 'Bakery',
     rating: 4.3,
     distance_km: 0.9,
     tags: ['cafe', 'bakery', 'quick bites'],
     description: 'Cozy vegetarian-friendly café open 24 hours in Centrium.',
-    image: 'https://images.unsplash.com/photo-placeholder-kandivali-shop.jpg'
+    image: 'https://tse1.mm.bing.net/th/id/OIP.i25MxooR3pi4FwhQhk0OwwHaIQ?pid=Api&P=0&h=180'
   },
   {
     id: 10,
@@ -99,7 +99,7 @@ window.QS_DATA = (() => {
     distance_km: 1.1,
     tags: ['traditional', 'bakes'],
     description: 'Traditional bakery delights at Thakur Village—delivery and takeaway.',
-    image: 'https://images.unsplash.com/photo-placeholder-kandivali-shop.jpg'
+    image: 'https://images.unsplash.com/photo-placeholder-kandivali-shop.jpghttps://tse2.mm.bing.net/th/id/OIP.3ZGSatVDABP9dWiBBg2XwgHaGb?pid=Api&P=0&h=180'
   },
   {
     id: 11,
