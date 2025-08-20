@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QuickServe – Vendor Subscription</title>
+  <link rel="stylesheet" href="styles/main.css"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23ff4d4d'/><text x='50' y='58' font-size='56' text-anchor='middle' fill='white' font-family='Arial'>Q</text></svg>">
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-left">
+      <a class="brand" href="index.html">QuickServe</a>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="subscription.html">Subscription</a>
+      <a href="bookings.html">Bookings</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>Vendor Subscription</h1>
+    <p class="muted">No commission per order. Pay a simple monthly fee to get listed and receive local orders.</p>
+
+    <div class="pricing">
+      <div class="price-card">
+        <h3>Starter</h3>
+        <div class="price">₹ 499<span>/mo</span></div>
+        <ul>
+          <li>Listing in local results</li>
+          <li>Basic analytics</li>
+          <li>Email support</li>
+        </ul>
+        <a href="#signup" class="btn">Start 14‑day trial</a>
+      </div>
+      <div class="price-card featured">
+        <h3>Growth</h3>
+        <div class="price">₹ 1,999<span>/mo</span></div>
+        <ul>
+          <li>Priority placement</li>
+          <li>Dashboard & insights</li>
+          <li>Priority support</li>
+        </ul>
+        <a href="#signup" class="btn">Start 30‑day trial</a>
+      </div>
+      <div class="price-card">
+        <h3>Plus</h3>
+        <div class="price">₹ 4,999<span>/mo</span></div>
+        <ul>
+          <li>Featured in category</li>
+          <li>Promotion credits</li>
+          <li>Dedicated success manager</li>
+        </ul>
+        <a href="#signup" class="btn">Talk to sales</a>
+      </div>
+    </div>
+
+    <section id="signup" class="signup">
+      <h2>List your store / service</h2>
+      <form id="subscribeForm" class="form">
+        <div class="grid">
+          <label>Business name<input name="business" required/></label>
+          <label>Owner name<input name="owner" required/></label>
+        </div>
+        <div class="grid">
+          <label>Email<input type="email" name="email" required/></label>
+          <label>Phone<input name="phone" required/></label>
+        </div>
+        <label>Address<input name="address" required/></label>
+        <label>Category
+          <select name="category" required>
+            <option>Electrician</option>
+            <option>Plumber</option>
+            <option>Mechanic</option>
+            <option>Grocery</option>
+            <option>Pharmacy</option>
+            <option>Bakery</option>
+          </select>
+        </label>
+        <button type="submit">Create Listing (Demo)</button>
+      </form>
+      <div id="subMsg" class="success hidden">Thanks! Your demo listing is saved locally.</div>
+    </section>
+  </main>
+
+  <script src="scripts/data.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+      const form = document.getElementById('subscribeForm');
+      const msg = document.getElementById('subMsg');
+      form.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        const data = Object.fromEntries(new FormData(form).entries());
+        // save as a new vendor in localStorage demo db
+        const vendors = JSON.parse(localStorage.getItem('qs_vendors_custom')||'[]');
+        const newVendor = {
+          id: 'cus_' + Date.now(),
+          name: data.business,
+          category: data.category,
+          rating: 4.5,
+          distance_km: 1.2,
+          tags: ['new','local'],
+          description: `Listed by ${data.owner}. Address: ${data.address}.`,
+          image: ''
+        };
+        vendors.push(newVendor);
+        localStorage.setItem('qs_vendors_custom', JSON.stringify(vendors));
+        form.reset();
+        msg.classList.remove('hidden');
+        setTimeout(()=> msg.classList.add('hidden'), 4000);
+      });
+    });
+  </script>
+
+  <footer class="footer">
+    <div>© 2025 QuickServe · Neighborhood‑powered delivery & on‑demand services</div>
+  </footer>
+  <script src="scripts/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QuickServe – Service Provider</title>
+  <link rel="stylesheet" href="styles/main.css"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23ff4d4d'/><text x='50' y='58' font-size='56' text-anchor='middle' fill='white' font-family='Arial'>Q</text></svg>">
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-left">
+      <a class="brand" href="index.html">QuickServe</a>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="subscription.html">Subscription</a>
+      <a href="bookings.html">Bookings</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container narrow">
+    <div id="vendorProfile" class="vendor"></div>
+    <section class="booking">
+      <h2>Book this service</h2>
+      <form id="bookingForm" class="form">
+        <label>Your name<input name="name" required /></label>
+        <label>Phone<input name="phone" required /></label>
+        <label>Address<input name="address" required /></label>
+        <label>Describe the issue / items<textarea name="note" rows="4" required></textarea></label>
+        <button type="submit">Confirm Booking</button>
+      </form>
+      <div id="bookingMsg" class="success hidden">Booking confirmed! The provider will contact you shortly.</div>
+    </section>
+  </main>
+
+  <script src="scripts/data.js"></script>
+  <script>
+    function getParam(name){
+      const url = new URL(window.location.href);
+      return url.searchParams.get(name);
+    }
+    document.addEventListener('DOMContentLoaded', ()=>{
+      const id = getParam('id');
+      const v = window.QS_DATA.vendors.find(x=>String(x.id)===String(id)) || window.QS_DATA.vendors[0];
+      const wrap = document.getElementById('vendorProfile');
+      wrap.innerHTML = `
+        <div class="vendor-hero">
+          <div class="vendor-img" style="background-image: linear-gradient(0deg, rgba(0,0,0,.35), rgba(0,0,0,.1)), url('${v.image||''}');"></div>
+          <div class="vendor-meta">
+            <h1>${v.name}</h1>
+            <div class="muted">${v.category} · ${v.distance_km} km · ★ ${v.rating.toFixed(1)}</div>
+            <div class="tags">${v.tags.map(t=>`<span class='chip'>${t}</span>`).join(' ')}</div>
+          </div>
+        </div>
+        <p class="desc">${v.description}</p>
+      `;
+
+      const form = document.getElementById('bookingForm');
+      const msg = document.getElementById('bookingMsg');
+      form.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        const data = Object.fromEntries(new FormData(form).entries());
+        const booking = { ...data, vendorId: v.id, vendorName: v.name, createdAt: new Date().toISOString() };
+        const existing = JSON.parse(localStorage.getItem('qs_bookings')||'[]');
+        existing.push(booking);
+        localStorage.setItem('qs_bookings', JSON.stringify(existing));
+        form.reset();
+        msg.classList.remove('hidden');
+        setTimeout(()=> msg.classList.add('hidden'), 4000);
+      });
+    });
+  </script>
+
+  <footer class="footer">
+    <div>© 2025 QuickServe · Neighborhood‑powered delivery & on‑demand services</div>
+  </footer>
+  <script src="scripts/app.js"></script>
+</body>
+</html>

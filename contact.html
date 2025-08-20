@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QuickServe – Contact Us</title>
+  <link rel="stylesheet" href="styles/main.css"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23ff4d4d'/><text x='50' y='58' font-size='56' text-anchor='middle' fill='white' font-family='Arial'>Q</text></svg>">
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-left">
+      <a class="brand" href="index.html">QuickServe</a>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="subscription.html">Subscription</a>
+      <a href="bookings.html">Bookings</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container narrow">
+    <h1>Contact</h1>
+    <p class="muted">Questions, feedback or partnership? Drop us a note.</p>
+    <form id="contactForm" class="form">
+      <label>Your name<input name="name" required/></label>
+      <label>Email<input type="email" name="email" required/></label>
+      <label>Message<textarea name="message" rows="5" required></textarea></label>
+      <button type="submit">Send</button>
+    </form>
+    <div id="contactMsg" class="success hidden">Thanks! We received your message (saved locally for demo).</div>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+      const form = document.getElementById('contactForm');
+      const msg = document.getElementById('contactMsg');
+      form.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        const data = Object.fromEntries(new FormData(form).entries());
+        const list = JSON.parse(localStorage.getItem('qs_contacts')||'[]');
+        list.push({...data, createdAt: new Date().toISOString()});
+        localStorage.setItem('qs_contacts', JSON.stringify(list));
+        form.reset();
+        msg.classList.remove('hidden');
+        setTimeout(()=> msg.classList.add('hidden'), 4000);
+      });
+    });
+  </script>
+
+  <footer class="footer">
+    <div>© 2025 QuickServe · Neighborhood‑powered delivery & on‑demand services</div>
+  </footer>
+  <script src="scripts/app.js"></script>
+</body>
+</html>

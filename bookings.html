@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QuickServe – Your Bookings</title>
+  <link rel="stylesheet" href="styles/main.css"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23ff4d4d'/><text x='50' y='58' font-size='56' text-anchor='middle' fill='white' font-family='Arial'>Q</text></svg>">
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-left">
+      <a class="brand" href="index.html">QuickServe</a>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="subscription.html">Subscription</a>
+      <a href="bookings.html">Bookings</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>Your Bookings (Demo)</h1>
+    <p class="muted">This shows bookings saved in your browser (no backend yet).</p>
+    <div id="bookingList" class="table"></div>
+    <button id="clearBtn" class="danger">Clear All</button>
+  </main>
+
+  <script>
+    function render(){
+      const root = document.getElementById('bookingList');
+      const data = JSON.parse(localStorage.getItem('qs_bookings')||'[]');
+      if(data.length===0){ root.innerHTML = '<div class="empty">No bookings yet.</div>'; return; }
+      const rows = data.map(b=>`
+        <div class='row'>
+          <div><strong>${b.vendorName||'-'}</strong><div class='muted'>${new Date(b.createdAt).toLocaleString()}</div></div>
+          <div>${b.name} · ${b.phone}</div>
+          <div class='muted'>${b.address}</div>
+          <div>${b.note}</div>
+        </div>`).join('');
+      root.innerHTML = `<div class='rows'>${rows}</div>`;
+    }
+    document.addEventListener('DOMContentLoaded', ()=>{
+      render();
+      document.getElementById('clearBtn').onclick = ()=>{ localStorage.removeItem('qs_bookings'); render(); };
+    });
+  </script>
+
+  <footer class="footer">
+    <div>© 2025 QuickServe · Neighborhood‑powered delivery & on‑demand services</div>
+  </footer>
+  <script src="scripts/app.js"></script>
+</body>
+</html>
