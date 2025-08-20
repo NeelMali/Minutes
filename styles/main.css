@@ -75,10 +75,33 @@ html, body { margin: 0; padding: 0; font-family: system-ui, -apple-system, Segoe
   .hero-search input { width: 100%; max-width: 360px; }
 }
 
-/* ============================
-   Categories Section 
-   ============================ */
+/* New Offerings Section for vendor page */
+.offerings-section {
+  margin-top: 32px;
+}
+.offerings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+}
+.offering-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
+.offering-card h3 {
+  margin: 0 0 4px;
+  font-size: 16px;
+}
+.offering-card p {
+  margin: 0;
+  font-weight: 600;
+  color: var(--brand);
+}
 
+/* Our Services Section */
 .services-container {
   display: flex;
   flex-wrap: wrap;
@@ -86,7 +109,6 @@ html, body { margin: 0; padding: 0; font-family: system-ui, -apple-system, Segoe
   gap: 1rem;
   margin-top: 1rem;
 }
-
 .service-card {
   background: #fff;
   border-radius: 12px;
@@ -97,16 +119,15 @@ html, body { margin: 0; padding: 0; font-family: system-ui, -apple-system, Segoe
   cursor: pointer;
   width: 140px;   /* fixed size for uniform look */
 }
-
 .service-card:hover {
   transform: translateY(-4px);
 }
-
 .service-icon {
   font-size: 2rem;
   margin-bottom: 10px;
 }
 
+/* Shop by Categories */
 .categories h2 {
   margin: 32px 0 20px;
   font-size: 24px;
@@ -158,9 +179,7 @@ html, body { margin: 0; padding: 0; font-family: system-ui, -apple-system, Segoe
   transform: translateY(-2px);
 }
 
-/* ============================
-   Popular Products Section
-   ============================ */
+/* Popular Products Section */
 .popular h2 {
   margin: 32px 0 16px;
   font-size: 24px;
@@ -204,76 +223,4 @@ html, body { margin: 0; padding: 0; font-family: system-ui, -apple-system, Segoe
   font-size: 14px;
   color: var(--brand);
   font-weight: 700;
-}
-/* catorgiresss */
-
-/* Product Sections */
-.products {
-  padding: 40px 20px;
-}
-
-.products h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  text-align: center;
-  color: #333;
-}
-
-/* Grid Layout */
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-}
-
-/* Product Card */
-.product-card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 15px;
-  text-align: center;
-  box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
-  transition: 0.3s ease;
-}
-
-.product-card img {
-  width: 100%;
-  height: 160px;
-  object-fit: contain;
-  margin-bottom: 12px;
-}
-
-.product-card h3 {
-  font-size: 16px;
-  margin-bottom: 6px;
-  color: #222;
-}
-
-.product-card p {
-  font-size: 14px;
-  font-weight: bold;
-  color: #4cafef;
-}
-
-/* Hover Effect */
-.product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 6px 15px rgba(0,0,0,0.15);
-}
-
-/* Map Section */
-.map-section h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-#map-container {
-  height: 400px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background-color: #e9e5d8;
-  background-image: url('https://i.imgur.com/g8vL3hR.jpg'); /* A generic map-like image or placeholder */
-  background-size: cover;
-  background-position: center;
-  margin-bottom: 24px;
 }
