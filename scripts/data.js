@@ -3,13 +3,13 @@ window.QS_DATA = (() => {
   const demo = [
  {
     id: 1,
-    name: 'Krishna Electrician',
+    name: 'Megha Electricals',
     category: 'Electrician',
     rating: 4.3,
     distance_km: 0.8,
     tags: ['wiring', 'socket', 'fan'],
     description: 'Electrician on Aakurli Road—quick response and reliable wiring fixes.',
-    image: 'https://images.unsplash.com/photo-placeholder-kandivali-shop.jpg'
+    image: 'https://content.jdmagicbox.com/comp/udupi/z5/0820px820.x820.180807132622.y1z5/catalogue/mega-electrical-malpe-udupi-electrical-shops-alvs3ok0hj.jpg'
   },
   {
     id: 2,
