@@ -161,80 +161,71 @@ html, body { margin: 0; padding: 0; font-family: system-ui, -apple-system, Segoe
 /* ============================
    Services Section (NEW)
    ============================ */
-/* ===== Global Styles ===== */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f9f9f9;
-  color: #333;
-}
-
-h2 {
+/* ============================
+   Our Services Section
+   ============================ */
+.services h2 {
+  margin: 32px 0 20px;
+  font-size: 24px;
+  font-weight: 700;
   text-align: center;
-  font-size: 28px;
-  margin: 40px 0 20px;
-  color: #222;
 }
 
-/* ===== Shop by Categories & Our Services Common Style ===== */
-.section-container {
+.services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   gap: 20px;
-  padding: 0 40px 40px;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
-/* Box Card Style */
-.card {
+.service-card {
   background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 8px;
   text-align: center;
-  padding: 20px;
-  transition: all 0.3s ease;
+  text-decoration: none;
+  color: var(--text);
+  transition: 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   cursor: pointer;
-  border: 2px solid transparent;
 }
 
-.card:hover {
-  transform: translateY(-8px);
-  border: 2px solid #ff7b54;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+.service-icon {
+  width: 80px;
+  height: 80px;
+  background: #fff7f5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  font-size: 36px; /* for emoji/icons */
 }
 
-/* Emoji / Logo Image */
-.card img {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 12px;
+.service-card img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
 }
 
-/* Title */
-.card h3 {
-  font-size: 18px;
-  color: #222;
-  margin: 0;
-}
-
-/* Subtitle / Description */
-.card p {
+.service-card span {
   font-size: 14px;
-  color: #666;
+  font-weight: 600;
+  color: #111;
+  line-height: 1.3;
   margin-top: 6px;
+  display: block;
 }
 
-/* ===== Specific Styling for Our Services ===== */
-.services .card {
-  background: linear-gradient(135deg, #fffaf0, #fff);
+.service-card:hover {
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+  transform: translateY(-2px);
+  border-color: var(--brand);
 }
-
-.services .card:hover {
-  background: linear-gradient(135deg, #ffe4d1, #fff);
-}
-
 
 /* ============================
    Popular Products Section
