@@ -63,7 +63,7 @@ window.QS_DATA = (() => {
   },
   {
     id: 7,
-    name: 'Mobile reapir centre',
+    name: 'Mobile repair centre',
     category: 'Electronics Repair',
     rating: 4.0,
     distance_km: 2.3,
