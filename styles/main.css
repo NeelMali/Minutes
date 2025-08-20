@@ -132,6 +132,31 @@ html, body { margin: 0; padding: 0; font-family: system-ui, -apple-system, Segoe
 /* ============================
    Services Section (NEW)
    ============================ */
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+}
+
+.service-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
 .services h2 {
   margin: 32px 0 20px;
   font-size: 24px;
