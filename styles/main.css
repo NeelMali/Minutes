@@ -74,9 +74,42 @@ html, body { margin: 0; padding: 0; font-family: system-ui, -apple-system, Segoe
   .hero-search { width: 100%; justify-content: center; }
   .hero-search input { width: 100%; max-width: 360px; }
 }
+.all-services {
+  margin: 3rem 0;
+}
+
+.all-services h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.service-card {
+  background: var(--card);
+  padding: 1.2rem;
+  text-align: center;
+  font-size: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
 
 /* ============================
-   Categories Section (Blinkit style)
+   Categories Section 
    ============================ */
 .categories h2 {
   margin: 32px 0 20px;
