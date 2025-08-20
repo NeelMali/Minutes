@@ -99,7 +99,7 @@ window.QS_DATA = (() => {
     distance_km: 1.1,
     tags: ['traditional', 'bakes'],
     description: 'Traditional bakery delights at Thakur Village—delivery and takeaway.',
-    image: 'https://images.unsplash.com/photo-placeholder-kandivali-shop.jpghttps://tse2.mm.bing.net/th/id/OIP.3ZGSatVDABP9dWiBBg2XwgHaGb?pid=Api&P=0&h=180'
+    image: 'https://b.zmtcdn.com/data/pictures/5/18480335/fd74847b11ba1279684ec18f8d30481c_featured_v2.jpg'
   },
   {
     id: 11,
