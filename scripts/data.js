@@ -79,7 +79,7 @@ window.QS_DATA = (() => {
     distance_km: 0.7,
     tags: ['cakes', 'desserts'],
     description: 'Top-rated bakery on Akurli Road, perfect for sweets and pastries.',
-    image: 'https://media-cdn.tripadvisor.com/media/photo-s/0e/68/37/a0/outlet-from-outside.jpghttps://images.unsplash.com/photo-placeholder-kandivali-shop.jpg'
+    image: 'https://media-cdn.tripadvisor.com/media/photo-s/0e/68/37/a0/outlet-from-outside.jpg'
   },
   {
     id: 9,
