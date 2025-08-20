@@ -79,6 +79,34 @@ html, body { margin: 0; padding: 0; font-family: system-ui, -apple-system, Segoe
    Categories Section 
    ============================ */
 
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* centers horizontally */
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+  cursor: pointer;
+  width: 140px;   /* fixed size for uniform look */
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+}
+
+.service-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
 .categories h2 {
   margin: 32px 0 20px;
   font-size: 24px;
@@ -188,7 +216,20 @@ html, body { margin: 0; padding: 0; font-family: system-ui, -apple-system, Segoe
   text-align: center;
   color: #333;
 }
-
+.products-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.products-header h2 {
+  margin: 0;
+}
+.products-header a {
+  font-weight: 600;
+  color: var(--brand);
+  text-decoration: none;
+}
 /* Grid Layout */
 .product-grid {
   display: grid;
@@ -204,29 +245,73 @@ html, body { margin: 0; padding: 0; font-family: system-ui, -apple-system, Segoe
   text-align: center;
   box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
   transition: 0.3s ease;
+  position: relative; /* for absolute positioning of delivery time */
 }
-
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 15px rgba(0,0,0,0.15);
+}
 .product-card img {
   width: 100%;
   height: 160px;
   object-fit: contain;
   margin-bottom: 12px;
 }
-
 .product-card h3 {
   font-size: 16px;
   margin-bottom: 6px;
   color: #222;
 }
-
 .product-card p {
   font-size: 14px;
   font-weight: bold;
   color: #4cafef;
 }
-
-/* Hover Effect */
-.product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 6px 15px rgba(0,0,0,0.15);
+.product-card .price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+.product-card .price {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--brand);
+}
+.product-card .old-price {
+  font-size: 12px;
+  color: var(--muted);
+  text-decoration: line-through;
+  margin-right: 5px;
+}
+.product-card .add-btn {
+  background-color: var(--brand);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: 700;
+}
+.product-card .delivery-time {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.product-card .discount-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #f0c14b;
+  color: #333;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
 }
