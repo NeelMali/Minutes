@@ -23,29 +23,54 @@
 
   <main class="container narrow">
     <div id="vendorProfile" class="vendor"></div>
+    
+    <section class="offerings-section">
+      <h2>Our Offerings</h2>
+      <div id="vendorOfferings" class="offerings-grid"></div>
+    </section>
+
     <section class="booking">
-      <h2>Book this service</h2>
+      <h2 id="bookingHeader">Book this service</h2>
       <form id="bookingForm" class="form">
         <label>Your name<input name="name" required /></label>
         <label>Phone<input name="phone" required /></label>
         <label>Address<input name="address" required /></label>
         <label>Describe the issue / items<textarea name="note" rows="4" required></textarea></label>
-        <button type="submit">Confirm Booking</button>
+        <button type="submit" id="bookingBtn">Confirm Booking</button>
       </form>
       <div id="bookingMsg" class="success hidden">Booking confirmed! The provider will contact you shortly.</div>
     </section>
   </main>
 
+  <footer class="footer">
+    <div>© 2025 TurantHub · Neighborhood‑powered delivery & on‑demand services</div>
+  </footer>
+
   <script src="scripts/data.js"></script>
+  <script src="scripts/app.js"></script>
   <script>
+    // Mock data for vendor offerings (to simulate a backend)
+    const vendorItems = {
+      1: [{ name: 'Wiring Repair', price: '₹300' }, { name: 'Fan Installation', price: '₹250' }],
+      2: [{ name: 'Cabling', price: '₹400' }, { name: 'Switchboard Fix', price: '₹350' }],
+      4: [{ name: 'Faucet Leak', price: '₹200' }, { name: 'Pipe Repair', price: '₹500' }],
+      6: [{ name: 'Screen Replacement', price: '₹1200' }, { name: 'Software Update', price: '₹400' }],
+      8: [{ name: 'Chocolate Cake', price: '₹500' }, { name: 'Red Velvet Pastry', price: '₹150' }],
+      11: [{ name: 'Casual Shirts', price: '₹700' }, { name: 'Blazers', price: '₹2500' }],
+      13: [{ name: 'TV Repair', price: '₹800' }, { name: 'Appliance Servicing', price: '₹600' }],
+      // Add more items for other vendors as needed
+    };
+
     function getParam(name){
       const url = new URL(window.location.href);
       return url.searchParams.get(name);
     }
+
     document.addEventListener('DOMContentLoaded', ()=>{
       const id = getParam('id');
       const v = window.QS_DATA.vendors.find(x=>String(x.id)===String(id)) || window.QS_DATA.vendors[0];
       const wrap = document.getElementById('vendorProfile');
+      
       wrap.innerHTML = `
         <div class="vendor-hero">
           <div class="vendor-img" style="background-image: linear-gradient(0deg, rgba(0,0,0,.35), rgba(0,0,0,.1)), url('${v.image||''}');"></div>
@@ -57,6 +82,39 @@
         </div>
         <p class="desc">${v.description}</p>
       `;
+
+      // Render vendor offerings
+      const offeringsGrid = document.getElementById('vendorOfferings');
+      const items = vendorItems[v.id] || [{ name: 'No specific offerings listed yet.' }];
+      items.forEach(item => {
+        const itemEl = document.createElement('div');
+        itemEl.className = 'offering-card';
+        itemEl.innerHTML = `
+          <h3>${item.name}</h3>
+          <p>${item.price || ''}</p>
+        `;
+        offeringsGrid.appendChild(itemEl);
+      });
+
+      // Dynamically change booking button text
+      const bookingBtn = document.getElementById('bookingBtn');
+      const bookingHeader = document.getElementById('bookingHeader');
+      let newBtnText = 'Confirm Booking';
+      let newHeaderText = 'Book this service';
+
+      if (v.category.includes('Electrician') || v.category.includes('Plumber')) {
+        newBtnText = 'Book a ' + v.category;
+        newHeaderText = 'Book this service';
+      } else if (v.category.includes('Bakery') || v.category.includes('Clothing')) {
+        newBtnText = 'Request a Call';
+        newHeaderText = 'Request a call from ' + v.name;
+      } else {
+        newBtnText = 'Confirm Booking';
+        newHeaderText = 'Book this service';
+      }
+
+      bookingBtn.textContent = newBtnText;
+      bookingHeader.textContent = newHeaderText;
 
       const form = document.getElementById('bookingForm');
       const msg = document.getElementById('bookingMsg');
@@ -73,10 +131,5 @@
       });
     });
   </script>
-
-  <footer class="footer">
-    <div>© 2025 TurantHub · Neighborhood‑powered delivery & on‑demand services</div>
-  </footer>
-  <script src="scripts/app.js"></script>
 </body>
 </html>
