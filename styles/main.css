@@ -78,6 +78,34 @@ html, body { margin: 0; padding: 0; font-family: system-ui, -apple-system, Segoe
 /* ============================
    Categories Section 
    ============================ */
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* centers horizontally */
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+  cursor: pointer;
+  width: 140px;   /* fixed size for uniform look */
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+}
+
+.service-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
 .categories h2 {
   margin: 32px 0 20px;
   font-size: 24px;
