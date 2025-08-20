@@ -13,23 +13,23 @@ window.QS_DATA = (() => {
   },
   {
     id: 2,
-    name: 'Gurukripa Electric & Hardware',
+    name: 'Sudhakar Electricals',
     category: 'Electrician',
     rating: 4.1,
     distance_km: 1.2,
     tags: ['hardware', 'cables', 'installation'],
     description: 'Electrical and hardware supplies in Thakur Village with solid reviews.',
-    image: 'https://images.unsplash.com/photo-placeholder-kandivali-shop.jpg'
+    image: 'https://i0.wp.com/ebhubaneswar.com/wp-content/uploads/2023/05/sudhakar-electrical-bapuji-nagar-bhubaneshwar-electrical-shops-guf8cu7r3c.jpg?resize=1536%2C1024&ssl=1'
   },
   {
     id: 3,
-    name: 'Roushan Electricals',
+    name: 'Smiths Electrical Supplies',
     category: 'Electrician',
     rating: 4.8,
     distance_km: 2.0,
     tags: ['socket install', 'maintenance'],
     description: 'Prompt and courteous residential electrical services.',
-    image: 'https://images.unsplash.com/photo-placeholder-kandivali-shop.jpg'
+    image: 'https://smithselectricalsupplies.co.uk/wp-content/uploads/2017/10/IMG_0743_4_5_Natural-002-1080x607.jpg'
   },
   {
     id: 4,
@@ -43,13 +43,13 @@ window.QS_DATA = (() => {
   },
   {
     id: 5,
-    name: 'Pratap Plumbing Works',
+    name: 'PlumbWell',
     category: 'Plumber',
     rating: 4.4,
     distance_km: 1.5,
     tags: ['24/7', 'emergency', 'leak repair'],
     description: '24-hour plumbing support, always ready for emergencies.',
-    image: 'https://images.unsplash.com/photo-placeholder-kandivali-shop.jpg'
+    image: 'https://tse1.mm.bing.net/th/id/OIP.i4sxmsTLMjQ_oO6HR4JQ-wHaHk?pid=Api&P=0&h=180'
   },
   {
     id: 6,
