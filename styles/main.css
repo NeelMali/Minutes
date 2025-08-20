@@ -79,34 +79,6 @@ html, body { margin: 0; padding: 0; font-family: system-ui, -apple-system, Segoe
    Categories Section 
    ============================ */
 
-.services-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* centers horizontally */
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.service-card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
-  cursor: pointer;
-  width: 140px;   /* fixed size for uniform look */
-}
-
-.service-card:hover {
-  transform: translateY(-4px);
-}
-
-.service-icon {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
 .categories h2 {
   margin: 32px 0 20px;
   font-size: 24px;
@@ -159,75 +131,6 @@ html, body { margin: 0; padding: 0; font-family: system-ui, -apple-system, Segoe
 }
 
 /* ============================
-   Services Section (NEW)
-   ============================ */
-/* ============================
-   Our Services Section
-   ============================ */
-.services h2 {
-  margin: 32px 0 20px;
-  font-size: 24px;
-  font-weight: 700;
-  text-align: center;
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 20px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.service-card {
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 16px 8px;
-  text-align: center;
-  text-decoration: none;
-  color: var(--text);
-  transition: 0.2s;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  cursor: pointer;
-}
-
-.service-icon {
-  width: 80px;
-  height: 80px;
-  background: #fff7f5;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 10px;
-  font-size: 36px; /* for emoji/icons */
-}
-
-.service-card img {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-}
-
-.service-card span {
-  font-size: 14px;
-  font-weight: 600;
-  color: #111;
-  line-height: 1.3;
-  margin-top: 6px;
-  display: block;
-}
-
-.service-card:hover {
-  box-shadow: 0 6px 18px rgba(0,0,0,.08);
-  transform: translateY(-2px);
-  border-color: var(--brand);
-}
-
-/* ============================
    Popular Products Section
    ============================ */
 .popular h2 {
@@ -274,8 +177,6 @@ html, body { margin: 0; padding: 0; font-family: system-ui, -apple-system, Segoe
   color: var(--brand);
   font-weight: 700;
 }
-/* catorgiresss */
-
 /* Product Sections */
 .products {
   padding: 40px 20px;
