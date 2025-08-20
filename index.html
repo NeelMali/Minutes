@@ -5,12 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>TurantHub – Find Nearby Services</title>
   <link rel="stylesheet" href="styles/main.css"/>
-  
-  <!-- Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
 </head>
 <body>
-  <!-- ================= NAVBAR ================= -->
   <header class="nav">
     <div class="nav-left">
       <a class="brand" href="index.html">TurantHub</a>
@@ -24,7 +20,6 @@
     </nav>
   </header>
 
-  <!-- ================= HERO ================= -->
   <section class="hero">
     <h1>Find trusted services near you</h1>
     <p>Electricians, plumbers, mechanics, local vendors — all in one app.</p>
@@ -35,48 +30,272 @@
     <div class="hero-tags" id="quickTags"></div>
   </section>
 
-  <!-- ================= SERVICE CARDS ================= -->
   <main class="container">
     <h2>Nearby services</h2>
     <div id="cards" class="cards-grid"></div>
   </main>
   
-  <!-- ================= INTERACTIVE MAP ================= -->
   <section class="container map-section">
-    <h2>Find Shops on Map</h2>
-    <div id="map"></div>
+    <h2>Find Stores on a Map</h2>
+    <div id="map-container"></div>
   </section>
 
-  <!-- ================= OUR SERVICES ================= -->
   <section id="services">
     <h2>Our Services</h2>
     <div class="services-container">
-      <div class="service-card"><div class="service-icon">🍔</div><h3>Food & Drinks</h3></div>
-      <div class="service-card"><div class="service-icon">⚡</div><h3>Electrician</h3></div>
-      <div class="service-card"><div class="service-icon">🔧</div><h3>Plumber</h3></div>
-      <div class="service-card"><div class="service-icon">🧹</div><h3>Cleaner</h3></div>
-      <div class="service-card"><div class="service-icon">🛒</div><h3>General Store</h3></div>
-      <div class="service-card"><div class="service-icon">✏️</div><h3>Stationery Shop</h3></div>
-      <div class="service-card"><div class="service-icon">💊</div><h3>Medical</h3></div>
-      <div class="service-card"><div class="service-icon">🍞</div><h3>Bakery</h3></div>
-      <div class="service-card"><div class="service-icon">🛠️</div><h3>Mechanic</h3></div>
-      <div class="service-card"><div class="service-icon">💇</div><h3>Salon & Beauty</h3></div>
-      <div class="service-card"><div class="service-icon">🚗</div><h3>Vehicle Services</h3></div>
-      <div class="service-card"><div class="service-icon">📦</div><h3>Courier & Parcel</h3></div>
-      <div class="service-card"><div class="service-icon">🎉</div><h3>Event Services</h3></div>
+      
+      <div class="service-card">
+        <div class="service-icon">🍔</div>
+        <h3>Food & Drinks</h3>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">⚡</div>
+        <h3>Electrician</h3>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🔧</div>
+        <h3>Plumber</h3>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🧹</div>
+        <h3>Cleaner</h3>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🛒</div>
+        <h3>General Store</h3>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">✏️</div>
+        <h3>Stationery Shop</h3>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">💊</div>
+        <h3>Medical</h3>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🍞</div>
+        <h3>Bakery</h3>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🛠️</div>
+        <h3>Mechanic</h3>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">💇</div>
+        <h3>Salon & Beauty</h3>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🚗</div>
+        <h3>Vehicle Services</h3>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📦</div>
+        <h3>Courier & Parcel</h3>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🎉</div>
+        <h3>Event Services</h3>
+      </div>
+
     </div>
   </section>
 
-  <!-- (your categories, popular products, product sections remain same, skipped for brevity) -->
+  <section class="categories container">
+    <h2>Shop by Categories</h2>
+    <div class="category-grid">
+      <a href="#" class="category-card">
+        <div class="category-img">
+          <img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png" alt="Dairy" />
+        </div>
+        <span>Dairy, Bread & Eggs</span>
+      </a>
+      <a href="#" class="category-card">
+        <div class="category-img">
+          <img src="https://cdn-icons-png.flaticon.com/512/415/415733.png" alt="Fruits" />
+        </div>
+        <span>Fruits & Vegetables</span>
+      </a>
+      <a href="#" class="category-card">
+        <div class="category-img">
+          <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="Snacks" />
+        </div>
+        <span>Snacks & Munchies</span>
+      </a>
+      <a href="#" class="category-card">
+        <div class="category-img">
+          <img src="https://cdn-icons-png.flaticon.com/512/2965/2965567.png" alt="Pharma" />
+        </div>
+        <span>Pharma & Wellness</span>
+      </a>
+      <a href="#" class="category-card">
+        <div class="category-img">
+          <img src="https://cdn-icons-png.flaticon.com/512/2927/2927347.png" alt="Personal Care" />
+        </div>
+        <span>Personal Care</span>
+      </a>
+      <a href="#" class="category-card">
+        <div class="category-img">
+          <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Pet Care" />
+        </div>
+        <span>Pet Care</span>
+      </a>
+    </div>
+  </section>
 
-  <!-- ================= FOOTER ================= -->
+  <section class="popular container">
+    <h2>Popular Products</h2>
+    <div class="scroll-row">
+      <div class="product-card">
+        <img src="https://i.imgur.com/0umadnY.png" alt="Milk">
+        <p>Amul Taaza Milk</p>
+        <span>₹29</span>
+      </div>
+      <div class="product-card">
+        <img src="https://i.imgur.com/mQYpB6F.png" alt="Butter">
+        <p>Amul Butter</p>
+        <span>₹62</span>
+      </div>
+      <div class="product-card">
+        <img src="https://i.imgur.com/0Hh5aBi.png" alt="Bread">
+        <p>Britannia Bread</p>
+        <span>₹40</span>
+      </div>
+      <div class="product-card">
+        <img src="https://i.imgur.com/Nm80VoC.png" alt="Lays">
+        <p>Lays Chips</p>
+        <span>₹20</span>
+      </div>
+      <div class="product-card">
+        <img src="https://i.imgur.com/L2w4NU1.png" alt="Juice">
+        <p>Real Juice</p>
+        <span>₹90</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="products">
+    <h2>🥛 Dairy Products</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://i.ibb.co/QfbWjQv/milk.jpg" alt="Milk">
+        <h3>Fresh Milk 1L</h3>
+        <p>₹55</p>
+      </div>
+      <div class="product-card">
+        <img src="https://i.ibb.co/xJ2LqPt/cheese.jpg" alt="Cheese">
+        <h3>Cheddar Cheese 200g</h3>
+        <p>₹120</p>
+      </div>
+      <div class="product-card">
+        <img src="https://i.ibb.co/tJ1FfmR/butter.jpg" alt="Butter">
+        <h3>Amul Butter 500g</h3>
+        <p>₹260</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="products">
+    <h2>🥬 Fresh Vegetables</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://i.ibb.co/RjpvJfJ/tomato.jpg" alt="Tomato">
+        <h3>Tomatoes 1kg</h3>
+        <p>₹40</p>
+      </div>
+      <div class="product-card">
+        <img src="https://i.ibb.co/z7KqJdx/onion.jpg" alt="Onion">
+        <h3>Onions 1kg</h3>
+        <p>₹30</p>
+      </div>
+      <div class="product-card">
+        <img src="https://i.ibb.co/VpFj8sR/potato.jpg" alt="Potato">
+        <h3>Potatoes 1kg</h3>
+        <p>₹25</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="products">
+    <h2>🍎 Fresh Fruits</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://i.ibb.co/5cgTmhx/apple.jpg" alt="Apple">
+        <h3>Apples 1kg</h3>
+        <p>₹180</p>
+      </div>
+      <div class="product-card">
+        <img src="https://i.ibb.co/8xmccxz/banana.jpg" alt="Banana">
+        <h3>Bananas (6 pcs)</h3>
+        <p>₹60</p>
+      </div>
+      <div class="product-card">
+        <img src="https://i.ibb.co/sgt5nhM/orange.jpg" alt="Orange">
+        <h3>Oranges 1kg</h3>
+        <p>₹120</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="products">
+    <h2>🍪 Snacks</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://i.ibb.co/k2nGy4y/biscuits.jpg" alt="Biscuits">
+        <h3>Parle-G Biscuits</h3>
+        <p>₹10</p>
+      </div>
+      <div class="product-card">
+        <img src="https://i.ibb.co/8jSYRsh/chips.jpg" alt="Chips">
+        <h3>Lays Chips</h3>
+        <p>₹20</p>
+      </div>
+      <div class="product-card">
+        <img src="https://i.ibb.co/9vbqVdw/chocolate.jpg" alt="Chocolate">
+        <h3>Dairy Milk</h3>
+        <p>₹40</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="products">
+    <h2>🥤 Beverages</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://i.ibb.co/W6B19hv/coke.jpg" alt="Coke">
+        <h3>Coca Cola 1.25L</h3>
+        <p>₹60</p>
+      </div>
+      <div class="product-card">
+        <img src="https://i.ibb.co/Qj9D63L/juice.jpg" alt="Juice">
+        <h3>Real Mango Juice 1L</h3>
+        <p>₹110</p>
+      </div>
+      <div class="product-card">
+        <img src="https://i.ibb.co/6XQvY3w/water.jpg" alt="Water">
+        <h3>Bottled Water 1L</h3>
+        <p>₹20</p>
+      </div>
+    </div>
+  </section>
+
+
   <footer class="footer">
     <div>© 2025 TurantHub · Neighborhood-powered delivery & on-demand services</div>
   </footer>
 
-  <!-- Scripts -->
   <script src="scripts/data.js"></script>
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const cards = document.getElementById('cards');
@@ -115,24 +334,10 @@
           cards.appendChild(card);
         });
       }
-      renderList('');
 
+      renderList('');
       searchBtn.addEventListener('click', ()=> renderList(searchInput.value));
       searchInput.addEventListener('keydown', (e)=>{ if(e.key==='Enter'){ renderList(searchInput.value); }});
-
-      // ================= MAP CODE =================
-      const map = L.map('map').setView([19.0760, 72.8777], 12); // Mumbai default
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap contributors'
-      }).addTo(map);
-
-      // Add vendor markers
-      window.QS_DATA.vendors.forEach(vendor => {
-        if(vendor.lat && vendor.lng){
-          L.marker([vendor.lat, vendor.lng]).addTo(map)
-            .bindPopup(`<b>${vendor.name}</b><br>${vendor.category}<br>★ ${vendor.rating.toFixed(1)}`);
-        }
-      });
     });
   </script>
   <script src="scripts/app.js"></script>
