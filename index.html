@@ -1,90 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Minutes – Find Nearby Services</title>
-  <link rel="stylesheet" href="styles/main.css"/>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23ff4d4d'/><text x='50' y='58' font-size='56' text-anchor='middle' fill='white' font-family='Arial'>Q</text></svg>">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minutes - Fast Delivery</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="nav">
-    <div class="nav-left">
-      <a class="brand" href="index.html">Minutes</a>
-    </div>
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="subscription.html">Subscription</a>
-      <a href="bookings.html">Bookings</a>
-      <a href="contact.html">Contact</a>
+
+  <!-- Header -->
+  <header class="navbar">
+    <div class="logo">Minutes</div>
+    <div class="location">📍 Mumbai | 20-30 mins</div>
+    <input type="text" placeholder="Search for products or stores..." class="search-bar">
+    <nav>
+      <a href="#">Login</a>
+      <a href="#">Sign Up</a>
+      <a href="#" class="cart">🛒 My Cart</a>
     </nav>
   </header>
 
+  <!-- Hero Section -->
   <section class="hero">
-    <h1>Find trusted services near you</h1>
-    <p>Electricians, plumbers, mechanics, local vendors — all in one app.</p>
-    <div class="hero-search">
-      <input id="searchInput" type="text" placeholder="Search e.g. electrician, plumber, bakery"/>
-      <button id="searchBtn">Search</button>
-    </div>
-    <div class="hero-tags" id="quickTags"></div>
+    <div class="banner">Pharmacy at your doorstep! <button>Order Now</button></div>
+    <div class="banner">Pet Care supplies in minutes <button>Order Now</button></div>
+    <div class="banner">No time for diapers? <button>Order Now</button></div>
   </section>
 
-  <main class="container">
-    <h2>Nearby services</h2>
-    <div id="cards" class="cards-grid"></div>
-  </main>
+  <!-- Categories -->
+  <section class="categories">
+    <h2>Shop by Category</h2>
+    <div class="category-grid">
+      <div class="category">🥛 Dairy & Eggs</div>
+      <div class="category">🥦 Fruits & Veggies</div>
+      <div class="category">🥤 Beverages</div>
+      <div class="category">🍫 Snacks</div>
+      <div class="category">🍪 Bakery</div>
+      <div class="category">👶 Baby Care</div>
+      <div class="category">🐾 Pet Care</div>
+      <div class="category">💊 Pharma</div>
+      <div class="category">🧼 Cleaning</div>
+    </div>
+  </section>
 
-  <script src="scripts/data.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const cards = document.getElementById('cards');
-      const searchInput = document.getElementById('searchInput');
-      const searchBtn = document.getElementById('searchBtn');
-      const quickTags = document.getElementById('quickTags');
+  <!-- Featured Stores -->
+  <section class="stores">
+    <h2>Popular Stores</h2>
+    <div class="store-grid">
+      <div class="store-card">Amul <button>Shop Now</button></div>
+      <div class="store-card">Britannia <button>Shop Now</button></div>
+      <div class="store-card">Gokul <button>Shop Now</button></div>
+      <div class="store-card">Local Kirana <button>Shop Now</button></div>
+    </div>
+  </section>
 
-      const tags = ['Electrician','Plumber','Mechanic','Grocery','Pharmacy','Bakery'];
-      tags.forEach(t=>{
-        const b = document.createElement('button');
-        b.className='chip';
-        b.textContent=t;
-        b.onclick=()=>{ searchInput.value=t; renderList(t); };
-        quickTags.appendChild(b);
-      });
+  <!-- Featured Products -->
+  <section class="products">
+    <h2>Popular Products</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <p class="delivery-time">⏱ 15 mins</p>
+        <img src="images/amul-milk.jpg" alt="Amul Milk">
+        <h3>Amul Taaza Toned Milk</h3>
+        <p>500 ml</p>
+        <p><span class="mrp">₹35</span> <span class="price">₹29</span></p>
+        <button class="add-btn">ADD</button>
+      </div>
+      <div class="product-card">
+        <p class="delivery-time">⏱ 15 mins</p>
+        <img src="images/amul-butter.jpg" alt="Amul Butter">
+        <h3>Amul Salted Butter</h3>
+        <p>100 g</p>
+        <p><span class="mrp">₹70</span> <span class="price">₹62</span></p>
+        <button class="add-btn">ADD</button>
+      </div>
+      <div class="product-card">
+        <p class="delivery-time">⏱ 20 mins</p>
+        <img src="images/britannia-bread.jpg" alt="Britannia Bread">
+        <h3>Britannia Sandwich Bread</h3>
+        <p>350 g</p>
+        <p><span class="mrp">₹45</span> <span class="price">₹40</span></p>
+        <button class="add-btn">ADD</button>
+      </div>
+    </div>
+  </section>
 
-      function renderList(query=''){
-        const q = query.toLowerCase().trim();
-        cards.innerHTML='';
-        const list = window.QS_DATA.vendors
-          .filter(v => !q || v.category.toLowerCase().includes(q) || v.name.toLowerCase().includes(q) || v.tags.join(' ').toLowerCase().includes(q))
-          .slice(0, 12);
-        if(list.length===0){ cards.innerHTML = '<div class="empty">No results. Try another keyword.</div>'; return; }
-        list.forEach(v=>{
-          const card = document.createElement('a');
-          card.className='card';
-          card.href = `vendor.html?id=${encodeURIComponent(v.id)}`;
-          card.innerHTML = `
-            <div class="card-img" style="background-image: linear-gradient(0deg, rgba(0,0,0,.3), rgba(0,0,0,.1)), url('${v.image||''}');"></div>
-            <div class="card-body">
-              <div class="card-title">${v.name}</div>
-              <div class="muted">${v.category} · ${v.distance_km} km</div>
-              <div class="rating">★ ${v.rating.toFixed(1)}</div>
-            </div>
-          `;
-          cards.appendChild(card);
-        });
-      }
+  <!-- Services -->
+  <section class="services">
+    <h2>What We Deliver</h2>
+    <div class="service-grid">
+      <div class="service-card">🍴 Food</div>
+      <div class="service-card">🛒 Groceries</div>
+      <div class="service-card">💊 Medicines</div>
+      <div class="service-card">📱 Electronics</div>
+      <div class="service-card">🏪 Local Stores</div>
+    </div>
+  </section>
 
-      renderList('');
-      searchBtn.addEventListener('click', ()=> renderList(searchInput.value));
-      searchInput.addEventListener('keydown', (e)=>{ if(e.key==='Enter'){ renderList(searchInput.value); }});
-    });
-  </script>
-
-  <footer class="footer">
-    <div>© 2025 Minutes · Neighborhood‑powered delivery & on‑demand services</div>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Minutes | All Rights Reserved</p>
+    <p>About | Contact | Terms | Privacy</p>
   </footer>
-  <script src="scripts/app.js"></script>
+
 </body>
 </html>
