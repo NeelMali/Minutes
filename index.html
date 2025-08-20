@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TurantHub – Find Nearby Services</title>
+  <title>Minutes – Find Nearby Services</title>
   <link rel="stylesheet" href="styles/main.css"/>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23ff4d4d'/><text x='50' y='58' font-size='56' text-anchor='middle' fill='white' font-family='Arial'>Q</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23ff4d4d'/><text x='50' y='58' font-size='56' text-anchor='middle' fill='white' font-family='Arial'>M</text></svg>">
 </head>
 <body>
+  <!-- Navigation -->
   <header class="nav">
     <div class="nav-left">
-      <a class="brand" href="index.html">TurantHub</a>
+      <a class="brand" href="index.html">Minutes</a>
     </div>
     <nav class="nav-links">
       <a href="index.html">Home</a>
@@ -21,6 +22,7 @@
     </nav>
   </header>
 
+  <!-- Hero -->
   <section class="hero">
     <h1>Find trusted services near you</h1>
     <p>Electricians, plumbers, mechanics, local vendors — all in one app.</p>
@@ -31,10 +33,47 @@
     <div class="hero-tags" id="quickTags"></div>
   </section>
 
+  <!-- Nearby services -->
   <main class="container">
     <h2>Nearby services</h2>
     <div id="cards" class="cards-grid"></div>
   </main>
+
+  <!-- Shop by Categories -->
+  <section class="categories container">
+    <h2>Shop by Categories</h2>
+    <div class="category-grid">
+      <a href="#" class="category-card">
+        <img src="images/dairy.png" alt="Dairy" />
+        <span>Dairy, Bread & Eggs</span>
+      </a>
+      <a href="#" class="category-card">
+        <img src="images/fruits.png" alt="Fruits" />
+        <span>Fruits & Vegetables</span>
+      </a>
+      <a href="#" class="category-card">
+        <img src="images/snacks.png" alt="Snacks" />
+        <span>Snacks & Munchies</span>
+      </a>
+      <a href="#" class="category-card">
+        <img src="images/pharma.png" alt="Pharma" />
+        <span>Pharma & Wellness</span>
+      </a>
+      <a href="#" class="category-card">
+        <img src="images/personal.png" alt="Personal Care" />
+        <span>Personal Care</span>
+      </a>
+      <a href="#" class="category-card">
+        <img src="images/pet.png" alt="Pet Care" />
+        <span>Pet Care</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div>© 2025 Minutes · Neighborhood-powered delivery & on-demand services</div>
+  </footer>
 
   <script src="scripts/data.js"></script>
   <script>
@@ -81,10 +120,6 @@
       searchInput.addEventListener('keydown', (e)=>{ if(e.key==='Enter'){ renderList(searchInput.value); }});
     });
   </script>
-
-  <footer class="footer">
-    <div>© 2025 TurantHub · Neighborhood‑powered delivery & on‑demand services</div>
-  </footer>
   <script src="scripts/app.js"></script>
 </body>
 </html>
